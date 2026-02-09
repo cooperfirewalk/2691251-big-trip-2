@@ -80,6 +80,9 @@ export default class NewPointPresenter {
 
   #escKeyDownHandler = (evt) => {
     if (evt.key === 'Escape' || evt.key === 'Esc') {
+      if (document.querySelector('.shake')) {
+        return;
+      }
       evt.preventDefault();
       this.destroy();
     }

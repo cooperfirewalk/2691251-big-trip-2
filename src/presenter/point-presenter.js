@@ -131,6 +131,9 @@ export default class PointPresenter {
 
   #escKeyDownHandler = (evt) => {
     if (evt.key === 'Escape') {
+      if (document.querySelector('.shake')) {
+        return;
+      }
       evt.preventDefault();
       this.#pointEditComponent.reset(this.#point);
       this.#replaceFormToCard();
